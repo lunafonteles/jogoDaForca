@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-game',
@@ -12,6 +12,8 @@ export class GameComponent implements OnInit {
   letter: string = "";
   anonymous: string[]= [];
   message: string = "";
+  try: number = 0;
+  maxTry: number = 6;
 
   constructor() { }
 
@@ -27,12 +29,13 @@ export class GameComponent implements OnInit {
     return this.sortedWord;
   }
 
-  enter(task:any) {
-    this.letter = task.value;
-      if(this.sortedWord.includes(this.letter)) {
-        this.correctLetter();
-      } else {
-        this.message = "Errou a letra, tente novamente";
+  enter() {
+    if(this.sortedWord.includes(this.letter)) {
+      this.correctLetter();
+      this.message = "";
+        } else {
+          this.message = "Errou a letra, tente novamente";
+          this.try++;
       }
     }
 
@@ -42,7 +45,6 @@ export class GameComponent implements OnInit {
         this.anonymous = [...this.anonymous, "_"];
       }
       console.log(this.anonymous);
-      
         return this.anonymous;
   }
 
@@ -54,4 +56,14 @@ export class GameComponent implements OnInit {
       }
     } 
   }
+
+  maxError(task:any) {
+      this.letter = task.value;
+    if(this.try <= this.maxTry) {
+      this.enter();
+  } else {
+    this.message = "Maximo de tentativas excedidas";
+  }
+
+}
 }

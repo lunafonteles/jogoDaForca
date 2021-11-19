@@ -1,3 +1,16 @@
-<input type="text" #letterInput placeholder="Digite uma letra" />
-<button (click)="enter(letterInput)">Inserir letra</button>
-<p>{{ anonymous }}</p>
+<body>
+  <div>
+    <input
+      maxlength="1"
+      type="text"
+      #letterInput
+      placeholder="Digite uma letra"
+    />
+    <button class="inputs" (click)="maxError(letterInput)">
+      Inserir letra
+    </button>
+  </div>
+
+  <p>{{ anonymous }}</p>
+  <p>{{ message }}</p>
+</body>
