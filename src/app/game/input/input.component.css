@@ -31,17 +31,3 @@ input {
   grid-column: 2 / 4;
   grid-row: 2;
 }
-
-article {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 10px;
-  background-color: rgb(138, 128, 194);
-}
-
-/* p {
-  grid-column: 2 / 3;
-  grid-row: 2;
-  text-align: center;
-} */

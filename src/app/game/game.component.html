@@ -1,16 +1,9 @@
 <body>
-  <div>
-    <input
-      maxlength="1"
-      type="text"
-      #letterInput
-      placeholder="Digite uma letra"
-    />
-    <button class="inputs" (click)="maxError(letterInput)">
-      Inserir letra
-    </button>
-  </div>
+  <div>Jogo da Forca</div>
+  <app-input (onSubmit)="enter($event)"></app-input>
 
-  <p>{{ anonymous }}</p>
-  <p>{{ message }}</p>
+  <article>
+    <p>{{ anonymous2 }}</p>
+    <p>{{ message }}</p>
+  </article>
 </body>

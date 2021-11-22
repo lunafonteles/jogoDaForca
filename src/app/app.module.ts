@@ -3,13 +3,13 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { GameComponent } from './game/game.component';
-import { LineComponent } from './line/line.component';
+import { InputComponent } from './game/input/input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GameComponent,
-    LineComponent
+    InputComponent,
   ],
   imports: [
     BrowserModule, FormsModule
